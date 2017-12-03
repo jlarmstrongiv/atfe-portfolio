@@ -1,5 +1,5 @@
 // TODO images, fonts, gulp notifications
-
+// add https://github.com/jonschlinkert/gulp-htmlmin
 // require gulp
 const gulp = require('gulp');
 const plumber = require('gulp-plumber');
