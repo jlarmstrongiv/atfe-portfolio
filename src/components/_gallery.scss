@@ -11,9 +11,6 @@
   background-color: $accent-dark;
   width: 100px;
 }
-.gallery {
-
-}
 .gallery__piece {
   display: flex;
   flex-direction: column;
@@ -53,5 +50,12 @@
   text-decoration: none;
   padding-right: 10px;
 }
-.cta-arrow {
+@media (min-width: $bp-large) {
+  .gallery {
+    max-width: $max-width-xlarge;
+  }
+  .cta-arrow {
+    display: none;
+  }
+
 }
