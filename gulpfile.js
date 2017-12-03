@@ -1,4 +1,4 @@
-// TODO images, fonts
+// TODO images, fonts, gulp notifications
 
 // require gulp
 const gulp = require('gulp');
