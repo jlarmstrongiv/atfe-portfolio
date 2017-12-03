@@ -6,10 +6,14 @@ h5,
 h6 {
   font-family: $font-heading;
   font-weight: bold;
+  color: $grey-dark;
 }
 .cta {
   font-family: $font-heading;
 }
-p {
+p,
+a {
   font-family: $font-body;
+  color: $grey-dark;
+  font-size: 14px;
 }

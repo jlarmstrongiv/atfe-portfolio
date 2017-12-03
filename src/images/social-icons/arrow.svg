@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="10px" height="18px" viewBox="0 0 10 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 47.1 (45422) - http://www.bohemiancoding.com/sketch -->
+    <title>arrow</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-2" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="home-mobile" transform="translate(-160.000000, -666.000000)" fill-rule="nonzero" fill="#444444">
+            <g id="Group-3" transform="translate(28.000000, 666.000000)">
+                <g id="arrow" transform="translate(132.000000, 0.000000)">
+                    <path d="M1.5,17.5605 L0.4395,16.5 L7.9395,9 L0.4395,1.5 L1.5,0.4395 L9.53025,8.46975 C9.8235,8.763 9.8235,9.237 9.53025,9.53025 L1.5,17.5605 Z" id="Shape"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,13 +1,54 @@
+.gallery-intro {
+  padding: 0 25px 0px 25px;
+}
+.gallery-intro__title {
+  font-size: 25px;
+  padding-bottom: 3px;
+}
+.gallery-intro__spacer {
+  background-color: $accent-dark;
+  width: 100px;
+}
 .gallery {
 
 }
 .gallery__piece {
   display: flex;
   flex-direction: column;
+  border-bottom: 1.5px solid $waterloo;
+  padding: 25px;
+  overflow-x: hidden;
+}
+.piece__title {
+  font-size: 18px;
+  padding: 0;
+  padding-bottom: 15px;
+}
+.piece__tags {
+  min-width: 400px;
 }
 .piece__tag {
   display: inline-block;
+  padding: 5px 10px;
+  background-color: $accent-light;
+  margin-right: 5px;
 }
 .piece__description {
   display: none;
+}
+.piece__cta {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0;
+  padding-top: 15px;
+}
+.cta-text {
+  font-family: $font-heading;
+  font-weight: bold;
+  text-decoration: none;
+  padding-right: 10px;
+}
+.cta-arrow {
 }
