@@ -1,8 +1,13 @@
-.splash {
+.splash__wrapper {
   background-color: $accent;
+  width: 100%;
+  overflow-x: hidden;
+}
+.splash {
   position: relative;
   min-height: 460px;
-  overflow-x: hidden;
+  max-width: $max-width-medium;
+  margin: 0 auto;
 }
 .splash__writeup {
   position: relative;
@@ -15,7 +20,7 @@
   position: absolute;
   width: 477px;
   top: 200px;
-  left: 80vw;
+  left: 350px;
   transform: translate(-50%, -50%);
   z-index: 1;
 }
@@ -66,9 +71,16 @@
   height: 35px;
   background: $accent;
 }
+@media (min-width: $bp-medium) {
+  .splash__image-wrapper {
+    left: 450px;
+  }
+}
 @media (min-width: $bp-large) {
-  .splash {
+  .splash__wrapper {
     background-color: $grey-light;
+  }
+  .splash {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
