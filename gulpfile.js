@@ -1,4 +1,4 @@
-// TODO images
+// TODO images, fonts
 
 // require gulp
 const gulp = require('gulp');
@@ -15,6 +15,7 @@ const zip = require('gulp-zip');
 const sourcemaps = require('gulp-sourcemaps');
 const autoprefixer = require('gulp-autoprefixer');
 const sass = require('gulp-sass');
+const sassGlob = require('gulp-sass-glob');
 const minifyCss = require('gulp-minify-css');
 // top level paths
 const DIST_PATH = './dist';
@@ -30,8 +31,8 @@ const CSS_SRC = SCSS_DIST + '/**/*.css';
 const KIT_SRC = SRC_PATH + '/pages/**/*.kit'
 const KIT_PARTIAL_SRC = SRC_PATH + '/components/**/*.kit'
 const SCSS_SRC = SRC_PATH + '/{components,general}/**/*.scss';
-const IMAGES_SRC = SRC_PATH + '/img/**/*.{jpeg,jpg,png,svg,gif}'
-
+const IMAGES_SRC = SRC_PATH + '/images/**/*.{jpeg,jpg,png,svg,gif}'
+const FONTS_SRC = SRC_PATH + '/fonts/**/*.{woff,woff2}'
 // browsersync
 gulp.task('browser-sync', () => {
   return browserSync.init({
@@ -46,40 +47,35 @@ gulp.task('browser-sync', () => {
 // styles
 gulp.task('styles', () => {
   return gulp.src([SCSS_SRC])
-    .pipe(plumber((err) => {
-      console.log('styles task error');
-      console.log(err);
-      this.emit('end');
-    }))
+    .pipe(plumber())
     .pipe(sourcemaps.init())
+    .pipe(sassGlob())
+    .pipe(sass({
+      outputStyle: 'compressed'
+    })).on('error', sass.logError)
     .pipe(autoprefixer({
       browsers: ['last 2 versions'],
       cascade: false
     }))
-    .pipe(sass({
-      outputStyle: 'compressed'
-    }))
     .pipe(flatten())
     .pipe(sourcemaps.write())
+    .pipe(plumber.stop())
     .pipe(gulp.dest(SCSS_DIST))
 });
 
 // kits
 gulp.task('kits', () => {
   return gulp.src([KIT_SRC])
-    .pipe(plumber((err) => {
-      console.log('kit task error');
-      console.log(err);
-      this.emit('end')
-    }))
+    .pipe(plumber())
     .pipe(kit())
+    .pipe(plumber.stop())
     .pipe(gulp.dest(DIST_PATH))
     // .pipe(browserSync.reload())
 });
 
 // run styles and then kits
 gulp.task('styles-kits', (done) => {
-  runSequence('styles', 'kits', () => {
+  return runSequence('styles', 'kits', () => {
     // console.log('Run something else');
     done();
   });
@@ -87,7 +83,20 @@ gulp.task('styles-kits', (done) => {
 
 // images
 gulp.task('images', () => {
+  return gulp.src(FONTS_SRC)
+    .pipe(plumber())
+    .pipe(flatten())
+    .pipe(plumber.stop())
+    .pipe(gulp.dest(DIST_PATH))
+});
 
+// fonts
+gulp.task('fonts', () => {
+  return gulp.src(FONTS_SRC)
+    .pipe(plumber())
+    .pipe(flatten())
+    .pipe(plumber.stop())
+    .pipe(gulp.dest(DIST_PATH))
 });
 
 // clean and delete dist folder
@@ -101,7 +110,7 @@ gulp.task('clean', () => {
 
 // run once
 gulp.task('once', (done) => {
-  runSequence('clean', 'styles', 'kits', () => {
+  return runSequence(['clean'], ['styles-kits', 'images', 'fonts'], () => {
     // console.log('Run something else');
     done();
   });
@@ -113,15 +122,27 @@ gulp.task('default', [], () => {
 });
 
 // gulpwatch
-gulp.task('watch', ['once', 'browser-sync'], () => {
+gulp.task('watch', ['once'], () => {
   gulp.watch([SCSS_SRC], ['styles-kits']);
   gulp.watch([KIT_SRC, KIT_PARTIAL_SRC], ['kits']);
+  gulp.watch([IMAGES_SRC], ['images']);
+  gulp.watch([FONTS_SRC], ['fonts']);
+  gulp.start(['browser-sync'])
   gulp.watch(HTML_SRC).on('change', reload);
 });
 
 // export zip folder
 gulp.task('package', () => {
   return gulp.src(DIST_PATH)
+    .pipe(plumber())
     .pipe(zip(PACKAGE))
+    .pipe(plumber.stop())
     .pipe(gulp.dest('./'))
 });
+
+// old plumber syntax
+// .pipe(plumber((err) => {
+//   console.log('styles task error');
+//   console.log(err);
+//   this.emit('end');
+// }))
