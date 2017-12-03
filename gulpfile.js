@@ -40,6 +40,13 @@ gulp.task('browser-sync', () => {
     port: 9345,
     ui: {
       port: 9346
+    },
+    notify: {
+      styles: {
+        top: 'auto',
+        bottom: 0,
+        borderRadius: 0
+      }
     }
   });
 });
@@ -132,7 +139,7 @@ gulp.task('watch', ['once'], () => {
 });
 
 // export zip folder
-gulp.task('package', () => {
+gulp.task('package', ['once'], () => {
   return gulp.src(DIST_PATH)
     .pipe(plumber())
     .pipe(zip(PACKAGE))
