@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 47.1 (45422) - http://www.bohemiancoding.com/sketch -->
+    <title>linkedin</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-2" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="home-desktop" transform="translate(-756.000000, -1883.000000)" fill-rule="nonzero" fill="#4B5893">
+            <g id="Group-11" transform="translate(652.000000, 1883.000000)">
+                <path d="M132,0 L108,0 C105.8,0 104,1.8 104,4 L104,28 C104,30.2 105.8,32 108,32 L132,32 C134.2,32 136,30.2 136,28 L136,4 C136,1.8 134.2,0 132,0 Z M115.6,24 L112.3,24 L112.3,13.3 L115.6,13.3 L115.6,24 L115.6,24 Z M113.9,11.9 C112.9,11.9 112,11 112,9.9 C112,8.9 112.9,8 113.9,8 C115,8 115.8,8.9 115.8,9.9 C115.8,11 115,11.9 113.9,11.9 Z M128,24 L124.7,24 L124.7,18.8 C124.7,17.6 124.7,16 123,16 C121.3,16 121,17.3 121,18.7 L121,24 L117.7,24 L117.7,13.3 L120.9,13.3 L120.9,14.8 L120.9,14.8 C121.3,14 122.4,13.1 124,13.1 C127.4,13.1 128,15.3 128,18.2 L128,24 Z" id="linkedin"></path>
+            </g>
+        </g>
+    </g>
+</svg>

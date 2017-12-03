@@ -1,0 +1,13 @@
+.gallery {
+
+}
+.gallery__piece {
+  display: flex;
+  flex-direction: column;
+}
+.piece__tag {
+  display: inline-block;
+}
+.piece__description {
+  display: none;
+}

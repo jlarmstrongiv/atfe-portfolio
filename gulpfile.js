@@ -83,7 +83,7 @@ gulp.task('styles-kits', (done) => {
 
 // images
 gulp.task('images', () => {
-  return gulp.src(FONTS_SRC)
+  return gulp.src(IMAGES_SRC)
     .pipe(plumber())
     .pipe(flatten())
     .pipe(plumber.stop())

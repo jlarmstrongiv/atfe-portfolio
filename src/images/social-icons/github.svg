@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 47.1 (45422) - http://www.bohemiancoding.com/sketch -->
+    <title>github</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-2" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="home-desktop" transform="translate(-704.000000, -1883.000000)" fill-rule="nonzero" fill="#4B5893">
+            <g id="Group-11" transform="translate(652.000000, 1883.000000)">
+                <path d="M80,0 L56,0 C53.8,0 52,1.8 52,4 L52,28 C52,30.2 53.8,32 56,32 L80,32 C82.2,32 84,30.2 84,28 L84,4 C84,1.8 82.2,0 80,0 Z M70.3,22.4 C70.3,22.4 69.2,22.5 68,22.5 C66.8,22.5 65.7,22.4 65.7,22.4 C62.9,22.1 60,21 60,16.2 C60,14.8 60.5,13.7 61.3,12.8 C61.2,12.5 60.7,11.2 61.4,9.5 C61.4,9.5 62.5,9.2 64.8,10.8 C65.8,10.5 66.9,10.4 67.9,10.4 C69,10.4 70,10.5 71,10.8 C73.4,9.2 74.4,9.5 74.4,9.5 C75.1,11.2 74.7,12.5 74.5,12.8 C75.3,13.7 75.8,14.8 75.8,16.2 C76,21 73.1,22.1 70.3,22.4 Z" id="github"></path>
+            </g>
+        </g>
+    </g>
+</svg>
