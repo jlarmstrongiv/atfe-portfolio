@@ -13,3 +13,8 @@ body {
   border-radius: 2px;
   height: 5px;
 }
+@media (min-width: $bp-large) {
+  body {
+    border: 20px solid $accent-dark;
+  }
+}
