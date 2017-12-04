@@ -14,7 +14,7 @@
 .gallery__piece {
   display: flex;
   flex-direction: column;
-  border-bottom: 1.5px solid $waterloo;
+  border-bottom: $border-grey;
   padding: 25px;
   overflow-x: hidden;
 }
@@ -93,12 +93,11 @@
     width: 100%;
   }
   .piece__cta-text {
-    padding-right: 0;
+    padding: 10px 20px; // this was overridden for some reason
     color: $white;
   }
   .piece__cta {
     background-color: $accent-dark;
     display: inline-block;
-    padding: 10px 20px;
   }
 }
