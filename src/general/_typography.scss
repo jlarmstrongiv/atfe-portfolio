@@ -8,8 +8,12 @@ h6 {
   font-weight: bold;
   color: $grey-dark;
 }
-.cta {
+.cta ,
+.cta-text {
   font-family: $font-heading;
+  font-size: 18px;
+  font-weight: bold;
+  text-decoration: none;
 }
 p,
 a {

@@ -2,13 +2,15 @@
   display: none;
 }
 @media (min-width: $bp-large) {
+  .header__wrapper {
+    padding: 30px $padding-xlarge;
+  }
   .header {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     max-width: $max-width-xlarge;
     margin: 0 auto;
-    padding: 45px 0;
   }
   .logo {
     text-transform: uppercase;

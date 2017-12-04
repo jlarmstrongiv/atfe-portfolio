@@ -13,7 +13,7 @@
   position: relative;
   z-index: 2;
   padding: 80px 20px 0 20px;
-  max-width: 370px;
+  max-width: 400px;
   margin: 0 auto;
 }
 .splash__image-wrapper {
@@ -79,11 +79,13 @@
 @media (min-width: $bp-large) {
   .splash__wrapper {
     background-color: $grey-light;
+    padding: 0 $padding-xlarge;
   }
   .splash {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
     max-width: $max-width-xlarge;
     margin: 0 auto;
   }
@@ -94,6 +96,7 @@
     font-size: 50px;
     line-height: 60px;
     color: $grey-dark;
+    min-width: 420px;
   }
   .splash__description {
     color: $grey-dark;
@@ -122,6 +125,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    max-width: 450px;
+    max-height: 450px;
+    width: 40vw;
+    height: 40vw;
+    flex: 1 0 auto;
+    padding: 4vw;
   }
   .splash__image {
     max-width: 360px;
@@ -131,7 +140,8 @@
   .splash__writeup {
     margin: 0;
     max-width: 600px;
-    padding: 70px 30px 0 0;
+    padding: 0;
+    padding-right: 30px;
   }
   .splash__sub-container {
     max-width: 400px;
