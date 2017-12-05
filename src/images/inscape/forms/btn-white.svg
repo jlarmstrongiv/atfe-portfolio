@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="314px" height="113px" viewBox="0 0 314 113" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 47.1 (45422) - http://www.bohemiancoding.com/sketch -->
+    <title>btn-white</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="0.25781251%" y1="49.7500002%" x2="101.257813%" y2="49.7500002%" id="linearGradient-1">
+            <stop stop-color="#E5618E" offset="0%"></stop>
+            <stop stop-color="#EE6D87" offset="24.4100765%"></stop>
+            <stop stop-color="#F57C83" offset="49.744898%"></stop>
+            <stop stop-color="#F98B7F" offset="74.3323501%"></stop>
+            <stop stop-color="#FB997F" offset="100%"></stop>
+        </linearGradient>
+        <rect id="path-2" x="0" y="0" width="138" height="44" rx="4"></rect>
+        <filter x="-31.9%" y="-63.6%" width="163.8%" height="300.0%" filterUnits="objectBoundingBox" id="filter-3">
+            <feOffset dx="0" dy="16" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="12" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0.0470588235   0 0 0 0 0   0 0 0 0 0.2  0 0 0 0.1 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Page-2" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="inscape-desktop" transform="translate(-395.000000, -3014.000000)">
+            <g id="btn-white" transform="translate(395.000000, 3014.000000)">
+                <rect id="Rectangle-5" fill="url(#linearGradient-1)" x="0" y="0" width="314" height="101"></rect>
+                <g id="Group-8" transform="translate(88.000000, 29.000000)">
+                    <g id="button-background">
+                        <use fill="black" fill-opacity="1" filter="url(#filter-3)" xlink:href="#path-2"></use>
+                        <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-2"></use>
+                    </g>
+                    <text id="Submissions" font-family="MoskExtra-Bold800, Mosk" font-size="14" font-weight="600" fill="#4A4A4A">
+                        <tspan x="29.919" y="23">Submissions</tspan>
+                    </text>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

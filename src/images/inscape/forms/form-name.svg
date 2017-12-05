@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="315px" height="55px" viewBox="0 0 315 55" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 47.1 (45422) - http://www.bohemiancoding.com/sketch -->
+    <title>form-name</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-2" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="inscape-desktop" transform="translate(-395.000000, -3139.000000)">
+            <g id="form-name" transform="translate(395.000000, 3139.000000)">
+                <rect id="Rectangle-2" fill="#FFFFFF" x="0" y="0" width="315" height="55" rx="4"></rect>
+                <text id="Preferred-Name" opacity="0.699999988" font-family="MoskExtra-Bold800, Mosk" font-size="14" font-weight="600" fill="#4A4A4A">
+                    <tspan x="70" y="33">Preferred Name</tspan>
+                </text>
+                <g id="users-24px-glyph_single-01" opacity="0.699999988" transform="translate(19.000000, 16.000000)" fill-rule="nonzero" fill="#4A4A4A">
+                    <path d="M11,13 C14.309,13 17,10.309 17,7 L17,6 C17,2.691 14.309,0 11,0 C7.691,0 5,2.691 5,6 L5,7 C5,10.309 7.691,13 11,13 Z" id="Shape"></path>
+                    <path d="M18.322,15.981 C13.618,14.678 8.383,14.678 3.678,15.981 C1.513,16.581 0,18.564 0,20.805 L0,24 L22,24 L22,20.805 C22,18.564 20.487,16.581 18.322,15.981 Z" id="Shape"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

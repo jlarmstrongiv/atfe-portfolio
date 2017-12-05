@@ -1,0 +1,8 @@
+.index__header-wrapper {
+  display: none;
+}
+@media (min-width: $bp-large) {
+  .index__header-wrapper {
+    display: block;
+  }
+}

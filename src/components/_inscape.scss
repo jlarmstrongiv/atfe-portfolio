@@ -1,0 +1,66 @@
+.work__image-wrapper {
+  display: flex;
+}
+// Introduction
+// Wireframes
+// Colors
+.inscape__colors {
+  width: 100%;
+}
+// Typography
+// Iconography
+.inscape__iconography-wrapper {
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  max-width: $max-width-medium;
+  padding: 30px 0 15px 0;
+}
+.inscape__iconography {
+  flex: 0 0 25%;
+  &:nth-child(-n+4) {
+    margin-bottom: 30px;
+  }
+}
+@media (min-width: $bp-large) {
+  .inscape__iconography {
+    flex: 0 0 auto;
+    &:nth-child(-n+4) {
+      margin-bottom: 0;
+    }
+  }
+}
+// Cards
+.inscape__cards-wrapper {
+  flex-flow: row wrap;
+  margin: 0 auto;
+  max-width: $max-width-medium;
+}
+.inscape__shadow {
+  background-color: $white;
+  border-radius: 4px;
+  flex: 1 1 25%;
+  margin: 20px;
+}
+.inscape__shadow--zero {
+  box-shadow: none;
+}
+.inscape__shadow--one {
+  box-shadow: 0 2px 4px 0 rgba(12,0,51,0.10);
+}
+.inscape__shadow--two {
+  box-shadow: 0 4px 8px 0 rgba(12,0,51,0.10);
+}
+.inscape__shadow--three {
+  box-shadow: 0 8px 16px 0 rgba(12,0,51,0.10);
+}
+.inscape__shadow--four {
+  box-shadow: 0 16px 24px 0 rgba(12,0,51,0.10);
+}
+.inscape__shadow--five {
+  box-shadow: 0 24px 32px 0 rgba(12,0,51,0.10);
+}
+// Buttons and Forms
+// Mockups
+// Coding

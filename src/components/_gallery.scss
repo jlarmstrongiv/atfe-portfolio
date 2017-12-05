@@ -46,8 +46,10 @@
   align-items: center;
   padding: 0;
   margin-top: 20px;
+  max-width: 160px;
 }
-.cta-text {
+.piece__cta-text {
+  padding: 0;
   padding-right: 10px;
 }
 @media (min-width: $bp-large) {
@@ -99,5 +101,6 @@
   .piece__cta {
     background-color: $accent-dark;
     display: inline-block;
+    max-width: none;
   }
 }

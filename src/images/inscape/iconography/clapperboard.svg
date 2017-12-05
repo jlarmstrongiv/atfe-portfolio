@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="44px" height="46px" viewBox="0 0 44 46" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 47.1 (45422) - http://www.bohemiancoding.com/sketch -->
+    <title>clapperboard</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-2" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="inscape-desktop" transform="translate(-732.000000, -2243.000000)" fill-rule="nonzero" fill="#3D3B37">
+            <g id="Group-7" transform="translate(411.000000, 2243.000000)">
+                <g id="clapperboard" transform="translate(321.000000, 0.000000)">
+                    <path d="M43,18 L3,18 C2.448,18 2,18.447 2,19 L2,45 C2,45.553 2.448,46 3,46 L43,46 C43.552,46 44,45.553 44,45 L44,19 C44,18.447 43.552,18 43,18 Z M31,35 L24,35 L24,39 C24,39.553 23.552,40 23,40 C22.448,40 22,39.553 22,39 L22,35 L15,35 C14.448,35 14,34.553 14,34 C14,33.447 14.448,33 15,33 L31,33 C31.552,33 32,33.447 32,34 C32,34.553 31.552,35 31,35 Z M31,28 L15,28 C14.448,28 14,27.553 14,27 C14,26.447 14.448,26 15,26 L31,26 C31.552,26 32,26.447 32,27 C32,27.553 31.552,28 31,28 Z" id="Shape"></path>
+                    <path d="M41.487,0.817 C41.438,0.553 41.285,0.32 41.063,0.171 C40.84,0.021 40.565,-0.034 40.304,0.021 L35.065,1.091 L30.872,9.948 L41.769,7.724 C42.303,7.616 42.651,7.098 42.552,6.562 L41.487,0.817 Z" id="Shape"></path>
+                    <polygon id="Shape" points="11.275 13.947 18.623 12.447 22.816 3.59 15.468 5.09"></polygon>
+                    <polygon id="Shape" points="32.614 1.59 25.266 3.09 21.073 11.947 28.421 10.447"></polygon>
+                    <path d="M13.018,5.59 L1.697,7.901 C1.156,8.011 0.807,8.54 0.917,9.081 L2.085,14.803 C2.182,15.277 2.599,15.603 3.064,15.603 C3.13,15.603 3.197,15.596 3.265,15.582 L8.825,14.447 L13.018,5.59 Z" id="Shape"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

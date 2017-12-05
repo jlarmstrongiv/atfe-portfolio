@@ -75,6 +75,7 @@ gulp.task('kits', () => {
   return gulp.src([KIT_SRC])
     .pipe(plumber())
     .pipe(kit())
+    .pipe(flatten())
     .pipe(plumber.stop())
     .pipe(gulp.dest(DIST_PATH))
     // .pipe(browserSync.reload())

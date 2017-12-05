@@ -1,0 +1,31 @@
+.work__group {
+  border-top: $border-grey;
+  margin-top: 30px;
+  padding-top: 14px;
+  &:first-child {
+    margin-top: 0;
+  }
+}
+.work__writeup {
+  padding: 0 $padding-xlarge;
+}
+.work__title {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+.work__description {
+ font-size: 14px;
+ max-width: 400px;
+}
+@media (min-width: $bp-large) {
+  .work__wrapper {
+    padding: 0 $padding-xlarge;    
+  }
+  .work {
+    max-width: $max-width-xlarge;
+    margin: 0 auto;
+  }
+  .work__writeup {
+    padding: 0;
+  }
+}
