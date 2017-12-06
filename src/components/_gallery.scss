@@ -16,7 +16,7 @@
   flex-direction: column;
   border-bottom: $border-grey;
   padding: 25px;
-  overflow-x: hidden;
+  padding-right: 0;
 }
 .piece__image-wrapper {
   display: none;
@@ -51,6 +51,9 @@
 .piece__cta-text {
   padding: 0;
   padding-right: 10px;
+}
+.piece__writeup {
+  overflow-x: hidden;
 }
 @media (min-width: $bp-large) {
   .cta-arrow {

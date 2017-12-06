@@ -1,6 +1,6 @@
 ### Custom ###
 /src/op-images/*
-!/op-images/.gitkeep
+!/src/op-images/.gitkeep
 
 # Created by https://www.gitignore.io/api/macOS,windows,linux,node
 

@@ -22,6 +22,7 @@ const minifyCss = require('gulp-minify-css');
 const DIST_PATH = 'dist';
 const SRC_PATH = 'src';
 const COMPILED_TO_INCLUDE = SRC_PATH + '/compiled-to-include'
+const PACKAGE_PATH = DIST_PATH + '/*'
 const PACKAGE = 'jlarmst-atfe-portfolio.zip'
 // dest paths
 const KIT_DIST = DIST_PATH;
@@ -156,7 +157,7 @@ gulp.task('watch', ['once'], () => {
 
 // export zip folder
 gulp.task('package', ['once'], () => {
-  return gulp.src(DIST_PATH)
+  return gulp.src(PACKAGE_PATH)
     .pipe(plumber())
     .pipe(zip(PACKAGE))
     .pipe(plumber.stop())
