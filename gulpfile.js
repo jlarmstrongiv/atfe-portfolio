@@ -2,6 +2,7 @@
 // add https://github.com/jonschlinkert/gulp-htmlmin
 // require gulp
 const gulp = require('gulp');
+const watch = require('gulp-watch');
 const plumber = require('gulp-plumber');
 const runSequence = require('run-sequence');
 const concat = require('gulp-concat');
@@ -18,8 +19,8 @@ const sass = require('gulp-sass');
 const sassGlob = require('gulp-sass-glob');
 const minifyCss = require('gulp-minify-css');
 // top level paths
-const DIST_PATH = './dist';
-const SRC_PATH = './src';
+const DIST_PATH = 'dist';
+const SRC_PATH = 'src';
 const COMPILED_TO_INCLUDE = SRC_PATH + '/compiled-to-include'
 const PACKAGE = 'jlarmst-atfe-portfolio.zip'
 // dest paths
@@ -31,7 +32,7 @@ const CSS_SRC = SCSS_DIST + '/**/*.css';
 const KIT_SRC = SRC_PATH + '/pages/**/*.kit'
 const KIT_PARTIAL_SRC = SRC_PATH + '/components/**/*.kit'
 const SCSS_SRC = SRC_PATH + '/{components,general}/**/*.scss';
-const IMAGES_SRC = SRC_PATH + '/images/**/*.{jpeg,jpg,png,svg,gif}'
+const IMAGES_SRC = SRC_PATH + '/op-images/**/*.{jpeg,jpg,png,svg,gif}'
 const FONTS_SRC = SRC_PATH + '/fonts/**/*.{woff,woff2}'
 // browsersync
 gulp.task('browser-sync', () => {
@@ -134,6 +135,20 @@ gulp.task('watch', ['once'], () => {
   gulp.watch([SCSS_SRC], ['styles-kits']);
   gulp.watch([KIT_SRC, KIT_PARTIAL_SRC], ['kits']);
   gulp.watch([IMAGES_SRC], ['images']);
+  gulp.watch([FONTS_SRC], ['fonts']);
+  gulp.start(['browser-sync'])
+  gulp.watch(HTML_SRC).on('change', reload);
+});
+gulp.task('watch', ['once'], () => {
+  watch([SCSS_SRC], () => {
+    gulp.start(['styles-kits']);
+  });
+  watch([KIT_SRC, KIT_PARTIAL_SRC], () => {
+    gulp.start(['kits']);
+  });
+  gulp.watch([IMAGES_SRC], () => {
+    gulp.start(['images']);
+  });
   gulp.watch([FONTS_SRC], ['fonts']);
   gulp.start(['browser-sync'])
   gulp.watch(HTML_SRC).on('change', reload);

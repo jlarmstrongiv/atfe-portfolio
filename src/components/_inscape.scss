@@ -1,7 +1,20 @@
 .work__image-wrapper {
   display: flex;
+  margin: 0 auto;
+  max-width: $max-width-medium;
 }
 // Introduction
+.work__group--introduction {
+  display: flex;
+  flex-direction: row;
+}
+.work__cover-wrapper {
+  flex: 1 1 auto;
+}
+.inscape__cover {
+  margin: 0 auto;
+  max-width: 300px;
+}
 // Wireframes
 // Colors
 .inscape__colors {
@@ -13,8 +26,6 @@
   flex-flow: row wrap;
   justify-content: space-between;
   align-items: center;
-  margin: 0 auto;
-  max-width: $max-width-medium;
   padding: 30px 0 15px 0;
 }
 .inscape__iconography {
@@ -34,8 +45,6 @@
 // Cards
 .inscape__cards-wrapper {
   flex-flow: row wrap;
-  margin: 0 auto;
-  max-width: $max-width-medium;
 }
 .inscape__shadow {
   background-color: $white;
