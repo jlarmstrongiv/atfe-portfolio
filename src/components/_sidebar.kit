@@ -1,0 +1,26 @@
+<amp-sidebar
+  id="sidebar-menu"
+  layout="nodisplay"
+  side="right">
+  <header class="header--mobile">
+    <nav class="nav--mobile">
+      <div class="nav__link close"
+        on="tap:sidebar-menu.close"
+        role="button"
+        tabindex="0">
+        <amp-img class="close__icon"
+          src="close-24.svg"
+          width="24"
+          height="24"
+          layout="fixed"
+          alt="Close menu button">
+        </amp-img>
+      </div>
+      <a href="index.html#about" class="nav__link nav__link--mobile">About</a>
+      <a href="index.html#gallery" class="nav__link nav__link--mobile">Work</a>
+      <a href="index.html#footer" class="nav__link nav__link--mobile">Contact</a>
+    </nav>
+    <div class="nav__spacer"></div>
+    <!-- @include "../components/footer-black" -->
+  </header>
+</amp-sidebar>

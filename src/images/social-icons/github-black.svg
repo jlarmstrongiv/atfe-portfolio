@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48 (47235) - http://www.bohemiancoding.com/sketch -->
+    <title>github</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Artboard-2" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-886.000000, -532.000000)">
+        <path d="M914,532 L890,532 C887.8,532 886,533.8 886,536 L886,560 C886,562.2 887.8,564 890,564 L914,564 C916.2,564 918,562.2 918,560 L918,536 C918,533.8 916.2,532 914,532 Z M904.3,554.4 C904.3,554.4 903.2,554.5 902,554.5 C900.8,554.5 899.7,554.4 899.7,554.4 C896.9,554.1 894,553 894,548.2 C894,546.8 894.5,545.7 895.3,544.8 C895.2,544.5 894.7,543.2 895.4,541.5 C895.4,541.5 896.5,541.2 898.8,542.8 C899.8,542.5 900.9,542.4 901.9,542.4 C903,542.4 904,542.5 905,542.8 C907.4,541.2 908.4,541.5 908.4,541.5 C909.1,543.2 908.7,544.5 908.5,544.8 C909.3,545.7 909.8,546.8 909.8,548.2 C910,553 907.1,554.1 904.3,554.4 Z" id="github" fill="#292B33" fill-rule="nonzero"></path>
+    </g>
+</svg>

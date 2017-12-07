@@ -1,5 +1,6 @@
 // TODO images, fonts, gulp notifications
 // add https://github.com/jonschlinkert/gulp-htmlmin
+// remove gulp sass glob, fix gulp watch
 // require gulp
 const gulp = require('gulp');
 const watch = require('gulp-watch');
@@ -29,11 +30,12 @@ const KIT_DIST = DIST_PATH;
 const HTML_SRC = KIT_DIST + '/**/*.html'
 const SCSS_DIST = COMPILED_TO_INCLUDE + '/css'
 const CSS_SRC = SCSS_DIST + '/**/*.css';
+const IMAGES_DIST = DIST_PATH + '/**/*.{jpeg,jpg,png,svg,gif,tiff,tif}'
 // src paths
 const KIT_SRC = SRC_PATH + '/pages/**/*.kit'
 const KIT_PARTIAL_SRC = SRC_PATH + '/components/**/*.kit'
 const SCSS_SRC = SRC_PATH + '/{components,general}/**/*.scss';
-const IMAGES_SRC = SRC_PATH + '/op-images/**/*.{jpeg,jpg,png,svg,gif}'
+const IMAGES_SRC = SRC_PATH + '/op-images/**/*.{jpeg,jpg,png,svg,gif,tiff,tif}'
 const FONTS_SRC = SRC_PATH + '/fonts/**/*.{woff,woff2}'
 // browsersync
 gulp.task('browser-sync', () => {
@@ -42,6 +44,9 @@ gulp.task('browser-sync', () => {
     port: 9345,
     ui: {
       port: 9346
+    },
+    weinre: {
+      port: 9347
     },
     notify: {
       styles: {
@@ -137,7 +142,7 @@ gulp.task('watch', ['once'], () => {
   gulp.watch([KIT_SRC, KIT_PARTIAL_SRC], ['kits']);
   gulp.watch([IMAGES_SRC], ['images']);
   gulp.watch([FONTS_SRC], ['fonts']);
-  gulp.start(['browser-sync'])
+  gulp.start(['browser-sync']);
   gulp.watch(HTML_SRC).on('change', reload);
 });
 gulp.task('watch', ['once'], () => {
@@ -153,6 +158,7 @@ gulp.task('watch', ['once'], () => {
   gulp.watch([FONTS_SRC], ['fonts']);
   gulp.start(['browser-sync'])
   gulp.watch(HTML_SRC).on('change', reload);
+  gulp.watch(IMAGES_DIST).on('change', reload);
 });
 
 // export zip folder
@@ -163,10 +169,3 @@ gulp.task('package', ['once'], () => {
     .pipe(plumber.stop())
     .pipe(gulp.dest('./'))
 });
-
-// old plumber syntax
-// .pipe(plumber((err) => {
-//   console.log('styles task error');
-//   console.log(err);
-//   this.emit('end');
-// }))

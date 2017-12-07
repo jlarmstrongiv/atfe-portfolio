@@ -99,10 +99,12 @@
   }
   .piece__cta-text {
     padding: 10px 20px; // this was overridden for some reason
+    padding-bottom: 8px;
     color: $white;
   }
   .piece__cta {
     background-color: $accent-dark;
+    border: 2.5px solid $accent-dark;
     display: inline-block;
     max-width: none;
   }

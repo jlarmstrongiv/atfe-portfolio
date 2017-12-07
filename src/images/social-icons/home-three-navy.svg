@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48 (47235) - http://www.bohemiancoding.com/sketch -->
+    <title>home-three</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Artboard-2" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-685.000000, -453.000000)">
+        <path d="M713,453 C715.2,453 717,454.8 717,457 L717,481 C717,483.2 715.2,485 713,485 L689,485 C686.8,485 685,483.2 685,481 L685,457 C685,454.8 686.8,453 689,453 L713,453 Z M701,461.432 L693.218,468.506667 L694.115333,469.493333 L695,468.689333 L695,475.666667 C695,476.035333 695.298667,476.333333 695.666667,476.333333 L699.666667,476.333333 L699.666667,472.333333 L702.333333,472.333333 L702.333333,476.333333 L706.333333,476.333333 C706.701333,476.333333 707,476.035333 707,475.666667 L707,468.689333 L707.884667,469.494 L708.782,468.507333 L701,461.432 Z M702.333333,469.666667 L699.666667,469.666667 L699.666667,467 L702.333333,467 L702.333333,469.666667 Z" id="home-three" fill="#4B5893" fill-rule="nonzero"></path>
+    </g>
+</svg>

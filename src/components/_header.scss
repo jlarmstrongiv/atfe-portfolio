@@ -1,5 +1,5 @@
 .header__wrapper {
-  padding: 20px $padding-xlarge 15px $padding-xlarge;
+  padding: 18px $padding-xlarge 15px $padding-xlarge;
 }
 .header {
   display: flex;
@@ -14,6 +14,9 @@
   font-weight: bold;
   text-decoration: none;
 }
+.nav {
+  display: none;
+}
 .nav__link {
   text-decoration: none;
   font-family: $font-heading;
@@ -23,9 +26,15 @@
 .midpoint {
   display: none;
 }
-@media (min-width: $bp-large) {
-  .header__wrapper {
-    padding: 30px $padding-xlarge;
+.hamburger {
+  margin-right: 10px;
+}
+@media (min-width: $bp-medium) {
+  .hamburger {
+    display: none;
+  }
+  .nav {
+    display: block;
   }
   .header {
     max-width: $max-width-xlarge;
@@ -34,5 +43,11 @@
   .midpoint {
     padding: 0 5px;
     display: inline;
+  }
+}
+@media (min-width: $bp-large) {
+  .header__wrapper {
+    padding: 30px $padding-xlarge;
+    padding-bottom: 25px;
   }
 }

@@ -1,0 +1,29 @@
+#sidebar-menu {
+  width: 70%;
+  background-color: $grey-light;
+}
+.header--mobile {
+  display: flex;
+  flex-flow: column;
+  height: 100%;
+}
+.nav__link--mobile,
+.close {
+  display: block;
+  border-bottom: $border-grey;
+  min-height: 61.5px;
+  width: 100%;
+}
+.close {
+  text-align: right;
+}
+.close__icon {
+  display: inline-block;
+  margin: 19px 19px 0 0;
+}
+.nav__link--mobile {
+  padding: 20px 0 0 40px;
+}
+.nav__spacer {
+  flex: 1 1 auto;
+}

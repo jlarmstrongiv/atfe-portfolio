@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48 (47235) - http://www.bohemiancoding.com/sketch -->
+    <title>home-one</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Artboard-2" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-555.000000, -532.000000)">
+        <path d="M583,532 C585.2,532 587,533.8 587,536 L587,560 C587,562.2 585.2,564 583,564 L559,564 C556.8,564 555,562.2 555,560 L555,536 C555,533.8 556.8,532 559,532 L583,532 Z M571.5312,539.0016 C571.228,538.732 570.772,538.732 570.4688,539.0016 L563.2688,545.4016 C563.0976,545.5536 563,545.772 563,546.0008 L563,556.4 C563,556.8416 563.3584,557.2 563.8,557.2 L568.6,557.2 L568.6,551.6 L573.4,551.6 L573.4,557.2 L578.2,557.2 C578.6416,557.2 579,556.8416 579,556.4 L579,546.0008 C579,545.772 578.9024,545.5544 578.7312,545.4024 L571.5312,539.0016 Z" id="home-one" fill="#292B33" fill-rule="nonzero"></path>
+    </g>
+</svg>

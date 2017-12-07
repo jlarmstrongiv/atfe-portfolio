@@ -1,41 +1,75 @@
-.work__image-wrapper {
-  display: flex;
-  margin: 0 auto;
-  max-width: $max-width-medium;
+/*
+How the sizing works
+Mobile {
+  .image-wrapper {
+    padding: $padding-xlarge;
+    max-width: $max-width-medium;
+  }
+  .work-writeup {
+    padding: $padding-xlarge;
+  }
 }
+Medium/Large {
+  .image-wrapper {
+    padding: 0 (or 20px grid)
+    max-width: $max-width-xmedium;
+  }
+}
+Large {
+  .work-writeup {
+    padding: 0;
+  }
+}
+*/
 // Introduction
-.work__group--introduction {
+.inscape__introduction-wrapper {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  justify-content: center;
 }
-.work__cover-wrapper {
+.inscape__cover-wrapper {
   flex: 1 1 auto;
+  margin-top: 20px;
 }
 .inscape__cover {
   margin: 0 auto;
-  max-width: 300px;
+  max-width: 250px;
 }
-// Wireframes
-// Colors
-.inscape__colors {
-  width: 100%;
+@media (min-width: $bp-xmedium) {
+  .inscape__introduction-wrapper {
+    flex-direction: row;
+    justify-content: flex-start;
+  }
+  .inscape__cover-wrapper {
+    margin-top: 0;
+  }
 }
-// Typography
+// Wireframes - see screen
+// Colors - see work__image
+// Typography - see work__image
+.work__image-wrapper.inscape__typography { // double style to override
+  margin-top: 40px;
+}
 // Iconography
-.inscape__iconography-wrapper {
+.work__image-wrapper.inscape__icons { // double style to override
   flex-flow: row wrap;
   justify-content: space-between;
   align-items: center;
   padding: 30px 0 15px 0;
 }
-.inscape__iconography {
+.inscape__icon-wrapper {
   flex: 0 0 25%;
+  text-align: center;
   &:nth-child(-n+4) {
     margin-bottom: 30px;
   }
 }
+.inscape__icon {
+  margin: 0 auto;
+  display: inline-block;
+}
 @media (min-width: $bp-large) {
-  .inscape__iconography {
+  .inscape__icon-wrapper {
     flex: 0 0 auto;
     &:nth-child(-n+4) {
       margin-bottom: 0;
@@ -71,5 +105,11 @@
   box-shadow: 0 24px 32px 0 rgba(12,0,51,0.10);
 }
 // Buttons and Forms
-// Mockups
+// Mockups - see screen
+.screens__mockups {
+  .screen__mobile,
+  .screen__desktop {
+    cursor: pointer;
+  }
+}
 // Coding
