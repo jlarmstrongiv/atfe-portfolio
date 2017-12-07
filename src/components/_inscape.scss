@@ -105,11 +105,13 @@ Large {
   box-shadow: 0 24px 32px 0 rgba(12,0,51,0.10);
 }
 // Buttons and Forms - to fix, very buggy
-.screen.buggy {
+.screen.buggy,
+.screen.screen__spacer {
   display: none;
 }
 @media (min-width: $bp-xmedium) {
-  .screen.buggy {
+  .screen.buggy,
+  .screen.screen__spacer {
     display: block;
   }
   .screens__forms {
