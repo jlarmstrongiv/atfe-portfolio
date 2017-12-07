@@ -13,6 +13,7 @@
   border-bottom: $border-grey;
   min-height: 61.5px;
   width: 100%;
+  opacity: $lighten;
 }
 .close {
   text-align: right;
@@ -26,4 +27,7 @@
 }
 .nav__spacer {
   flex: 1 1 auto;
+}
+.footer__wrapper--mobile {
+  opacity: $lighten;
 }
