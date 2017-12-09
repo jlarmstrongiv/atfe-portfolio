@@ -10,6 +10,18 @@
 @import 'general'
 , 'typography';
 
-@import '../components/**/*.scss';
+// Shared Components
+@import '../components/header'
+, '../components/sidebar' // even though hidden on index?
+, '../components/footer';
+
+// Index Components
+@import '../components/index'
+, '../components/splash'
+, '../components/gallery';
+
+// Inscape Case Study Components
+@import '../components/inscape'
+, '../components/work';
 
 @import 'test';

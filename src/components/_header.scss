@@ -27,6 +27,7 @@
   display: none;
 }
 .hamburger {
+  cursor: pointer;
   margin-right: 10px;
 }
 @media (min-width: $bp-medium) {

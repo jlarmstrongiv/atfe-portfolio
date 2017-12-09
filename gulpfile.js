@@ -1,6 +1,6 @@
 // TODO images, fonts, gulp notifications
 // add https://github.com/jonschlinkert/gulp-htmlmin
-// remove gulp sass glob, fix gulp watch
+// fix gulp watch
 // require gulp
 const gulp = require('gulp');
 const watch = require('gulp-watch');
@@ -17,7 +17,7 @@ const zip = require('gulp-zip');
 const sourcemaps = require('gulp-sourcemaps');
 const autoprefixer = require('gulp-autoprefixer');
 const sass = require('gulp-sass');
-const sassGlob = require('gulp-sass-glob');
+// const sassGlob = require('gulp-sass-glob');
 const minifyCss = require('gulp-minify-css');
 // top level paths
 const DIST_PATH = 'dist';
@@ -63,19 +63,47 @@ gulp.task('styles', () => {
   return gulp.src([SCSS_SRC])
     .pipe(plumber())
     .pipe(sourcemaps.init())
-    .pipe(sassGlob())
+    // .pipe(sassGlob())
     .pipe(sass({
       outputStyle: 'compressed'
     })).on('error', sass.logError)
+    .pipe(sourcemaps.write({includeContent: false}))
+    .pipe(sourcemaps.init({loadMaps: true}))
     .pipe(autoprefixer({
       browsers: ['last 2 versions'],
       cascade: false
     }))
+    .pipe(sourcemaps.write('.'))
     .pipe(flatten())
-    .pipe(sourcemaps.write())
     .pipe(plumber.stop())
     .pipe(gulp.dest(SCSS_DIST))
 });
+
+// .pipe(sourcemaps.init())
+// .pipe(sass().on('error', sass.logError))
+// .pipe(sourcemaps.write({includeContent: false}))
+// .pipe(sourcemaps.init({loadMaps: true}))
+// .pipe(autoprefixer({ browser: ['last 2 version', '> 5%'] }))
+// .pipe(sourcemaps.write('.'))
+// .pipe(gulp.dest('./.temp/'));
+
+// gulp.task('styles', () => {
+//   return gulp.src([SCSS_SRC])
+//     .pipe(plumber())
+//     .pipe(sourcemaps.init())
+//     // .pipe(sassGlob())
+//     .pipe(autoprefixer({
+//       browsers: ['last 2 versions'],
+//       cascade: false
+//     }))
+//     .pipe(sass({
+//       outputStyle: 'compressed'
+//     })).on('error', sass.logError)
+//     .pipe(flatten())
+//     .pipe(sourcemaps.write())
+//     .pipe(plumber.stop())
+//     .pipe(gulp.dest(SCSS_DIST))
+// });
 
 // kits
 gulp.task('kits', () => {
