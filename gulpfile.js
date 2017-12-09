@@ -1,6 +1,4 @@
-// TODO images, fonts, gulp notifications
-// add https://github.com/jonschlinkert/gulp-htmlmin
-// fix gulp watch
+// TODO images, fonts, gulp notifications, gulp watch
 // require gulp
 const gulp = require('gulp');
 const watch = require('gulp-watch');
@@ -9,15 +7,15 @@ const runSequence = require('run-sequence');
 const concat = require('gulp-concat');
 const flatten = require('gulp-flatten');
 const del = require('del');
-const browserSync = require('browser-sync').create();
+const browserSync = require('browser-sync'); //.create();
 const reload = browserSync.reload;
 const kit = require('gulp-kit');
 const zip = require('gulp-zip');
+const htmlmin = require('gulp-htmlmin');
 // require scss
 const sourcemaps = require('gulp-sourcemaps');
 const autoprefixer = require('gulp-autoprefixer');
 const sass = require('gulp-sass');
-// const sassGlob = require('gulp-sass-glob');
 const minifyCss = require('gulp-minify-css');
 // top level paths
 const DIST_PATH = 'dist';
@@ -37,11 +35,13 @@ const KIT_PARTIAL_SRC = SRC_PATH + '/components/**/*.kit'
 const SCSS_SRC = SRC_PATH + '/{components,general}/**/*.scss';
 const IMAGES_SRC = SRC_PATH + '/op-images/**/*.{jpeg,jpg,png,svg,gif,tiff,tif}'
 const FONTS_SRC = SRC_PATH + '/fonts/**/*.{woff,woff2}'
+
 // browsersync
 gulp.task('browser-sync', () => {
   return browserSync.init({
     server: DIST_PATH,
     port: 9345,
+    reloadOnRestart: false,
     ui: {
       port: 9346
     },
@@ -79,48 +79,34 @@ gulp.task('styles', () => {
     .pipe(gulp.dest(SCSS_DIST))
 });
 
-// .pipe(sourcemaps.init())
-// .pipe(sass().on('error', sass.logError))
-// .pipe(sourcemaps.write({includeContent: false}))
-// .pipe(sourcemaps.init({loadMaps: true}))
-// .pipe(autoprefixer({ browser: ['last 2 version', '> 5%'] }))
-// .pipe(sourcemaps.write('.'))
-// .pipe(gulp.dest('./.temp/'));
-
-// gulp.task('styles', () => {
-//   return gulp.src([SCSS_SRC])
-//     .pipe(plumber())
-//     .pipe(sourcemaps.init())
-//     // .pipe(sassGlob())
-//     .pipe(autoprefixer({
-//       browsers: ['last 2 versions'],
-//       cascade: false
-//     }))
-//     .pipe(sass({
-//       outputStyle: 'compressed'
-//     })).on('error', sass.logError)
-//     .pipe(flatten())
-//     .pipe(sourcemaps.write())
-//     .pipe(plumber.stop())
-//     .pipe(gulp.dest(SCSS_DIST))
-// });
-
 // kits
 gulp.task('kits', () => {
   return gulp.src([KIT_SRC])
     .pipe(plumber())
     .pipe(kit())
     .pipe(flatten())
+    .pipe(htmlmin({
+      caseSensitive: true,
+      collapseWhitespace: true,
+      collapseInlineTagWhitespace: true,
+      keepClosingSlash: true,
+      removeComments: true,
+      removeEmptyAttributes: false
+    }))
     .pipe(plumber.stop())
     .pipe(gulp.dest(DIST_PATH))
-    // .pipe(browserSync.reload())
 });
-
-// run styles and then kits
+// run kits and then reload
+gulp.task('kits-reload', (done) => {
+  return runSequence('kits', () => {
+    browserSync.reload();
+    return done();
+  });
+});
+// run styles and then kits-reload
 gulp.task('styles-kits', (done) => {
-  return runSequence('styles', 'kits', () => {
-    // console.log('Run something else');
-    done();
+  return runSequence('styles', 'kits-reload', () => {
+    return done();
   });
 });
 
@@ -155,7 +141,7 @@ gulp.task('clean', () => {
 gulp.task('once', (done) => {
   return runSequence(['clean'], ['styles-kits', 'images', 'fonts'], () => {
     // console.log('Run something else');
-    done();
+    return done();
   });
 });
 
@@ -165,28 +151,34 @@ gulp.task('default', [], () => {
 });
 
 // gulpwatch
-gulp.task('watch', ['once'], () => {
-  gulp.watch([SCSS_SRC], ['styles-kits']);
-  gulp.watch([KIT_SRC, KIT_PARTIAL_SRC], ['kits']);
-  gulp.watch([IMAGES_SRC], ['images']);
-  gulp.watch([FONTS_SRC], ['fonts']);
-  gulp.start(['browser-sync']);
-  gulp.watch(HTML_SRC).on('change', reload);
-});
+// gulp.task('watch', ['once'], () => {
+//   gulp.watch([SCSS_SRC], ['styles-kits']);
+//   gulp.watch([KIT_SRC, KIT_PARTIAL_SRC], ['kits']);
+//   gulp.watch([IMAGES_SRC], ['images']);
+//   gulp.watch([FONTS_SRC], ['fonts']);
+//   gulp.start(['browser-sync']);
+//   gulp.watch(HTML_SRC).on('change', reload);
+// });
 gulp.task('watch', ['once'], () => {
   watch([SCSS_SRC], () => {
     gulp.start(['styles-kits']);
   });
   watch([KIT_SRC, KIT_PARTIAL_SRC], () => {
-    gulp.start(['kits']);
+    gulp.start(['kits-reload']);
   });
-  gulp.watch([IMAGES_SRC], () => {
+  watch([IMAGES_SRC], () => {
     gulp.start(['images']);
   });
-  gulp.watch([FONTS_SRC], ['fonts']);
+  watch([FONTS_SRC], () => {
+    gulp.start(['fonts']);
+  });
   gulp.start(['browser-sync'])
-  gulp.watch(HTML_SRC).on('change', reload);
-  gulp.watch(IMAGES_DIST).on('change', reload);
+  // watch([HTML_SRC], () => {
+  //   browserSync.reload();
+  // });
+  // watch([IMAGES_DIST], () => {
+  //   browserSync.reload();
+  // });
 });
 
 // export zip folder
