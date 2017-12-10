@@ -1,4 +1,4 @@
-// TODO images, fonts, gulp notifications, gulp watch
+// TODO images, fonts, gulp notifications, gulp watch, page-wrapper for navy bg
 // require gulp
 const gulp = require('gulp');
 const watch = require('gulp-watch');
@@ -104,8 +104,9 @@ gulp.task('kits-reload', (done) => {
   });
 });
 // run styles and then kits-reload
-gulp.task('styles-kits', (done) => {
+gulp.task('styles-kits-reload', (done) => {
   return runSequence('styles', 'kits-reload', () => {
+    // console.log('Run something else');
     return done();
   });
 });
@@ -139,7 +140,7 @@ gulp.task('clean', () => {
 
 // run once
 gulp.task('once', (done) => {
-  return runSequence(['clean'], ['styles-kits', 'images', 'fonts'], () => {
+  return runSequence(['clean'], ['styles-kits-reload', 'images', 'fonts'], () => {
     // console.log('Run something else');
     return done();
   });
@@ -150,18 +151,9 @@ gulp.task('default', [], () => {
 
 });
 
-// gulpwatch
-// gulp.task('watch', ['once'], () => {
-//   gulp.watch([SCSS_SRC], ['styles-kits']);
-//   gulp.watch([KIT_SRC, KIT_PARTIAL_SRC], ['kits']);
-//   gulp.watch([IMAGES_SRC], ['images']);
-//   gulp.watch([FONTS_SRC], ['fonts']);
-//   gulp.start(['browser-sync']);
-//   gulp.watch(HTML_SRC).on('change', reload);
-// });
 gulp.task('watch', ['once'], () => {
   watch([SCSS_SRC], () => {
-    gulp.start(['styles-kits']);
+    gulp.start(['styles-kits-reload']);
   });
   watch([KIT_SRC, KIT_PARTIAL_SRC], () => {
     gulp.start(['kits-reload']);
@@ -173,12 +165,6 @@ gulp.task('watch', ['once'], () => {
     gulp.start(['fonts']);
   });
   gulp.start(['browser-sync'])
-  // watch([HTML_SRC], () => {
-  //   browserSync.reload();
-  // });
-  // watch([IMAGES_DIST], () => {
-  //   browserSync.reload();
-  // });
 });
 
 // export zip folder
