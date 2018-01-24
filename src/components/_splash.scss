@@ -32,7 +32,7 @@
 .splash__spacer {
   background-color: $white;
   width: 185px;
-  margin: 15px 0;
+  margin: 12px 0 15px 0;
 }
 .splash__cta-container {
   display: flex;
@@ -75,6 +75,9 @@
   .splash__image-wrapper {
     left: 450px;
   }
+  .splash__image {
+    margin: 10px 0;
+  }
 }
 @media (min-width: $bp-large) {
   .splash__wrapper {
@@ -103,6 +106,7 @@
   }
   .splash__spacer {
     background-color: $accent-dark;
+    margin-top: 8px;
   }
   .splash__cta--bold {
     background-color: $accent-dark;
@@ -130,9 +134,10 @@
     width: 40vw;
     height: 40vw;
     flex: 1 0 auto;
-    padding: 4vw;
+    padding: 45px; // 4vw
   }
   .splash__image {
+    margin: 0;
     max-width: 360px;
     width: 100%;
     transform: translate(10px, 20px);

@@ -122,6 +122,14 @@ Large {
       margin-top: 60px;
     }
   }
+  .screen.buggy {
+    &:nth-last-child(-n+2) {
+      margin-top: 60px;
+    }
+    &:last-child {
+      margin-top: 0;
+    }
+  }
 }
 // Mockups - see screen
 .screens__mockups {

@@ -1,4 +1,4 @@
-// TODO images, fonts, gulp notifications, gulp watch, page-wrapper for navy bg
+// TODO images, fonts, gulp notifications, gulp watch, page-wrapper for navy bg, move pdf to its own folder, remove sourcemaps in final build
 // require gulp
 const gulp = require('gulp');
 const watch = require('gulp-watch');
@@ -28,12 +28,12 @@ const KIT_DIST = DIST_PATH;
 const HTML_SRC = KIT_DIST + '/**/*.html'
 const SCSS_DIST = COMPILED_TO_INCLUDE + '/css'
 const CSS_SRC = SCSS_DIST + '/**/*.css';
-const IMAGES_DIST = DIST_PATH + '/**/*.{jpeg,jpg,png,svg,gif,tiff,tif}'
+const IMAGES_DIST = DIST_PATH + '/**/*.{jpeg,jpg,png,svg,gif,tiff,tif,pdf}'
 // src paths
 const KIT_SRC = SRC_PATH + '/pages/**/*.kit'
 const KIT_PARTIAL_SRC = SRC_PATH + '/components/**/*.kit'
 const SCSS_SRC = SRC_PATH + '/{components,general}/**/*.scss';
-const IMAGES_SRC = SRC_PATH + '/op-images/**/*.{jpeg,jpg,png,svg,gif,tiff,tif}'
+const IMAGES_SRC = SRC_PATH + '/op-images/**/*.{jpeg,jpg,png,svg,gif,tiff,tif,pdf}'
 const FONTS_SRC = SRC_PATH + '/fonts/**/*.{woff,woff2}'
 
 // browsersync
@@ -62,18 +62,17 @@ gulp.task('browser-sync', () => {
 gulp.task('styles', () => {
   return gulp.src([SCSS_SRC])
     .pipe(plumber())
-    .pipe(sourcemaps.init())
-    // .pipe(sassGlob())
+    // .pipe(sourcemaps.init())
     .pipe(sass({
       outputStyle: 'compressed'
     })).on('error', sass.logError)
-    .pipe(sourcemaps.write({includeContent: false}))
-    .pipe(sourcemaps.init({loadMaps: true}))
+    // .pipe(sourcemaps.write({includeContent: false}))
+    // .pipe(sourcemaps.init({loadMaps: true}))
     .pipe(autoprefixer({
       browsers: ['last 2 versions'],
       cascade: false
     }))
-    .pipe(sourcemaps.write('.'))
+    // .pipe(sourcemaps.write('.'))
     .pipe(flatten())
     .pipe(plumber.stop())
     .pipe(gulp.dest(SCSS_DIST))
@@ -88,7 +87,9 @@ gulp.task('kits', () => {
     .pipe(htmlmin({
       caseSensitive: true,
       collapseWhitespace: true,
-      collapseInlineTagWhitespace: true,
+      collapseInlineTagWhitespace: false,
+      // preserveLineBreaks: true,
+      // preventAttributesEscaping: true,
       keepClosingSlash: true,
       removeComments: true,
       removeEmptyAttributes: false
