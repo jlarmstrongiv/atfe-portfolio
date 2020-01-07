@@ -1,6 +1,9 @@
 ### Custom ###
+/src/compiled-to-include
+/src/compiled-to-include/
 /src/op-images/*
 !/src/op-images/.gitkeep
+/dist
 
 # Created by https://www.gitignore.io/api/macOS,windows,linux,node
 

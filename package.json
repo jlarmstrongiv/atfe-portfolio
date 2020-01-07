@@ -4,7 +4,11 @@
   "description": "Portfolio from the All Things Frontend Class Edit",
   "main": "index.js",
   "scripts": {
-    "test": "mocha"
+    "start": "gulp watch",
+    "build": "gulp once",
+    "clean": "gulp clean",
+    "teardown": "now remove jlarmstrongiv --safe --yes",
+    "now": "cd dist && now -A ../now.json && now -A ../now.json alias && now remove jlarmstrongiv --safe --yes"
   },
   "repository": {
     "type": "git",
@@ -21,20 +25,36 @@
   },
   "homepage": "https://github.com/jlarmstrongiv/atfe-portfolio#readme",
   "devDependencies": {
-    "browser-sync": "^2.18.13",
-    "del": "^3.0.0",
-    "gulp": "^3.9.1",
-    "gulp-autoprefixer": "^4.0.0",
-    "gulp-concat": "^2.6.1",
-    "gulp-flatten": "^0.3.1",
-    "gulp-htmlmin": "^3.0.0",
-    "gulp-kit": "^0.3.0",
-    "gulp-minify-css": "^1.2.4",
-    "gulp-plumber": "^1.1.0",
-    "gulp-sass": "^3.1.0",
-    "gulp-sourcemaps": "^2.6.1",
-    "gulp-watch": "^4.3.11",
-    "gulp-zip": "^4.0.0",
-    "run-sequence": "^2.2.0"
+    "browser-sync": "2.18.13",
+    "del": "3.0.0",
+    "gulp": "3.9.1",
+    "gulp-autoprefixer": "4.0.0",
+    "gulp-concat": "2.6.1",
+    "gulp-flatten": "0.3.1",
+    "gulp-htmlmin": "3.0.0",
+    "gulp-kit": "0.3.0",
+    "gulp-minify-css": "1.2.4",
+    "gulp-plumber": "1.1.0",
+    "gulp-sass": "3.1.0",
+    "gulp-sourcemaps": "2.6.1",
+    "gulp-watch": "4.3.11",
+    "gulp-zip": "4.0.0",
+    "run-sequence": "2.2.0"
+  },
+  "custom": {
+    "notes": [
+      "nodenv local 10.18.0",
+      "npm install -g gulp@3 now",
+      "now login",
+      "sudo npm install -g node-gyp",
+      "npm install",
+      "npm install -D natives node-sass@3.1.0",
+      "Generate op-images folder in src by creating an src inside gulp-images-hot-folder and running npm build",
+      "now certs list",
+      "now certs add jlarmstrongiv.com",
+      "now certs issue --challenge-only jlarmstrongiv.com",
+      "now certs issue jlarmstrongiv.com",
+      "now certs list"
+    ]
   }
 }
